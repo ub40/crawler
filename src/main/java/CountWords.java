@@ -1,5 +1,5 @@
 import java.io.BufferedReader;
-import java.net.URL;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -7,23 +7,20 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 
-public class CountWords {
+public class CountWords extends Source {
 
     BufferedReader in;
-    URL url;
     String inputLine;
     ArrayList<String> stringArrayList = new ArrayList<>();
-    long begin = System.nanoTime();
-    long end = System.nanoTime();
-    int countPages = 0;
-    int sumWords = 0;
 
-    public void coudnCommonWords() throws Exception {
+
+    public void countCommonWords() throws Exception {
+
+        in = new BufferedReader(new InputStreamReader(Source.url.openStream()));
 
         while ((inputLine = in.readLine()) != null) {
-
             stringArrayList.add(inputLine);
-          Map<String, Long> map = stringArrayList
+            Map<String, Long> map = stringArrayList
                     .stream()
                     .collect(Collectors.groupingBy(w -> w, Collectors.counting()));
 
@@ -34,14 +31,14 @@ public class CountWords {
                     .collect(Collectors.toList());
 
             System.out.println("Gevonden aantaal : " + result);
-            System.out.println("Verstreken tijd : " + (end - begin));
+            System.out.println("Verstreken tijd: " + (getEndTime() - getBeginTime()));
             System.out.println("--- End Binary Search ---");
 
         }
         in.close();
 
 
-        }
+    }
 
 }
 
