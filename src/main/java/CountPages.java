@@ -17,8 +17,8 @@ public class CountPages extends Source {
             if ( line.contains("href=\"http://")) {
                 int startLine = line.indexOf("\"");
                 int endLine = line.lastIndexOf("\"");
-                setCountPages(countPages++);
-                System.out.println(countPages + ") " + line.substring(startLine + 1, endLine) + " Bevat " + getSumWords() + " paginas");
+                getCountPages();
+                System.out.println(countPages + ") " + line.substring(startLine + 1, endLine));
                 System.out.println("Verstreken tijd: " + (getEndTime() - getBeginTime()));
                 System.out.println("--- End Binary Search ---");
             }

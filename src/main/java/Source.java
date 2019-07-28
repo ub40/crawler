@@ -18,7 +18,7 @@ public class Source {
     public long endTime;
 
     public int getCountPages() {
-        return countPages;
+        return countPages++;
     }
 
     public void setCountPages(int countPages) {
