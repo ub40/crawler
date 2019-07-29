@@ -18,19 +18,13 @@ public class CountWords extends Source {
 
         in = new BufferedReader(new InputStreamReader(Source.url.openStream()));
 
+        String strRegEx = "<[^>]*>";
         while ((inputLine = in.readLine()) != null) {
-            stringArrayList.add(inputLine);
-            Map<String, Long> map = stringArrayList
-                    .stream()
-                    .collect(Collectors.groupingBy(w -> w, Collectors.counting()));
 
-            List<Map.Entry<String, Long>> result = map.entrySet()
-                    .stream()
-                    .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-                    .limit(10)
-                    .collect(Collectors.toList());
+            stringArrayList.add(inputLine.replaceAll(strRegEx, ""));
 
-            System.out.println("Gevonden aantaal : " + result);
+
+//            System.out.println("Gevonden aantaal : " + result);
             System.out.println("Verstreken tijd: " + (getEndTime() - getBeginTime()));
             System.out.println("--- End Binary Search ---");
 

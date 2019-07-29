@@ -11,9 +11,7 @@ public class CountPages extends Source {
 
         while (scanner.hasNext()) {
             String line = scanner.next();
-
             setSumWords(sumWords++);
-
             if ( line.contains("href=\"http://")) {
                 int startLine = line.indexOf("\"");
                 int endLine = line.lastIndexOf("\"");

@@ -5,8 +5,8 @@ public class Main {
         CountWords countWords = new CountWords();
         CountPages countPages = new CountPages();
         try {
-            countPages.countPages();
-//            countWords.countCommonWords();
+//            countPages.countPages();
+            countWords.countCommonWords();
 
         } catch (Exception e) {
             e.printStackTrace();

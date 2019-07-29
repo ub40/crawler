@@ -1,7 +1,7 @@
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class Source {
+public abstract class Source {
 
     public static URL url;
     static {
