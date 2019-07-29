@@ -16,6 +16,7 @@ public abstract class Source {
     public int sumWords;
     public long beginTime;
     public long endTime;
+    String inputLine;
 
     public int getCountPages() {
         return countPages++;
@@ -48,4 +49,5 @@ public abstract class Source {
     public void setEndTime(long endTime) {
         this.endTime = endTime;
     }
+    
 }
